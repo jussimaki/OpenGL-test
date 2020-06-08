@@ -1,0 +1,18 @@
+#version 120
+
+
+attribute vec3 position;
+attribute vec2 texCoord;
+attribute vec4 spriteColor;
+
+varying vec2 texCoord0;
+varying vec4 spriteColor0;
+
+uniform mat4 ORTHO;
+
+void main()
+{
+	gl_Position = ORTHO * vec4(position, 1.0);
+	texCoord0 = texCoord;
+	spriteColor0 = spriteColor;
+}
